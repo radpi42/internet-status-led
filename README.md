@@ -35,11 +35,11 @@ cd /
 then make it excutable:
 
 #command#
-chmod 755 networkledlauncher.sh
+chmod 755 ledlauncher.sh
 
 #Now test it, by typing in:#
 
-sh networkledlauncher.sh
+sh ledlauncher.sh
 
 ######
 
@@ -47,7 +47,11 @@ Next we need to make a directory for the any errors in crontab to go.
 
 ########
 
-this repo has the logs directory already made
+cd /home/pi/internet-status-led
+mkrdir logs
+
+
+##################
 
 
 next we schedule it in crontab
@@ -57,6 +61,6 @@ crontab -e
 
 Then enter
 
-@reboot sh /home/pi/internet-status-led/netowrkledlauncher.sh >/home/pi/internet-status-led/logs/cronlog 2>&1
+@reboot sh /home/pi/internet-status-led/ledlauncher.sh >/home/pi/internet-status-led/logs/cronlog 2>&1
 
 now reboot and hope you didnt mess up
